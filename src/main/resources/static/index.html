@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IA API Frontend</title>
+    <script>
+        async function processarDados() {
+            const valor1 = document.getElementById("valor1").value;
+            const valor2 = document.getElementById("valor2").value;
+
+            const response = await fetch("http://192.168.0.12:8080/api/process", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({ valor1: parseFloat(valor1), valor2: parseFloat(valor2) })
+            });
+
+            if (!response.ok) {
+                const errorText = await response.text();
+                console.error("Erro na requisição:", errorText);
+                document.getElementById("resultado").innerText = "Erro: " + errorText;
+                return;
+            }
+
+            const resultado = await response.json();
+            document.getElementById("resultado").innerText = "Resultado: " + resultado.resultado;
+        }
+    </script>
+</head>
+
+<body>
+    <h1>API de IA - Frontend</h1>
+    <input type="number" id="valor1" placeholder="Valor 1">
+    <input type="number" id="valor2" placeholder="Valor 2">
+    <button onclick="processarDados()">Enviar</button>
+
+    <p id="resultado"></p>
+</body>
+
+</html>
