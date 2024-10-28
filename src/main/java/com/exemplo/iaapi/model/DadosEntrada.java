@@ -1,6 +1,7 @@
 package com.exemplo.iaapi.model;
 
 public class DadosEntrada {
+    // exemplos simples, teste
     private double valor1;
     private double valor2;
 
