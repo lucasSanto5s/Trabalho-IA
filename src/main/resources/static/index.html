@@ -1,43 +1,81 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IA API Frontend</title>
-    <script>
-        async function processarDados() {
-            const valor1 = document.getElementById("valor1").value;
-            const valor2 = document.getElementById("valor2").value;
-
-            const response = await fetch(" http://localhost:8080/api/process", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify({ valor1: parseFloat(valor1), valor2: parseFloat(valor2) })
-            });
-
-            if (!response.ok) {
-                const errorText = await response.text();
-                console.error("Erro na requisição:", errorText);
-                document.getElementById("resultado").innerText = "Erro: " + errorText;
-                return;
-            }
-
-            const resultado = await response.json();
-            document.getElementById("resultado").innerText = "Resultado: " + resultado.resultado;
-        }
-    </script>
+    <title>Busca Clássica</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> 
 </head>
-
 <body>
-    <h1>API de IA - Frontend</h1>
-    <input type="number" id="valor1" placeholder="Valor 1">
-    <input type="number" id="valor2" placeholder="Valor 2">
-    <button onclick="processarDados()">Enviar</button>
+    <div class="container mt-5">
+        <h1 class="text-center">Algoritmos de Busca Clássica</h1>
+        <h2 class="text-center">Rotas de trem entre capitais da Europa</h2>
+        
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="origem">Origem:</label>
+                    <select id="origem" class="form-control form-control-sm">
+                        <option value="Lisboa">Lisboa</option>
+                        <option value="Madrid">Madrid</option>
+                        <option value="Paris">Paris</option>
+                        <option value="Bruxelas">Bruxelas</option>
+                        <option value="Amsterdam">Amsterdam</option>
+                        <option value="Londres">Londres</option>
+                        <option value="Berlim">Berlim</option>
+                        <option value="Praga">Praga</option>
+                        <option value="Viena">Viena</option>
+                        <option value="Budapeste">Budapeste</option>
+                    </select>
+                </div>
 
-    <p id="resultado"></p>
+                <div class="form-group">
+                    <label for="destino">Destino:</label>
+                    <select id="destino" class="form-control form-control-sm">
+                        <option value="Lisboa">Lisboa</option>
+                        <option value="Madrid">Madrid</option>
+                        <option value="Paris">Paris</option>
+                        <option value="Bruxelas">Bruxelas</option>
+                        <option value="Amsterdam">Amsterdam</option>
+                        <option value="Londres">Londres</option>
+                        <option value="Berlim">Berlim</option>
+                        <option value="Praga">Praga</option>
+                        <option value="Viena">Viena</option>
+                        <option value="Budapeste">Budapeste</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="algoritmo">Algoritmo:</label>
+                    <select id="algoritmo" class="form-control form-control-sm">
+                        <option value="BFS">Busca em Largura</option>
+                        <option value="DFS">Busca em Profundidade</option>
+                        <option value="AStar">A*</option>
+                    </select>
+                </div>
+
+                <button id="botaoBuscar" class="btn btn-primary btn-block">Buscar Rota</button>
+                <button id="botaoLimpar" class="btn btn-secondary btn-block mt-2">Limpar</button>
+            </div>
+
+            <div class="col-md-6">
+                <div id="resultados" class="mt-4">
+                    <h2>Resultados:</h2>
+                    <p id="rota"></p>
+                    <p id="distancia"></p>
+                    <p id="nosGerados"></p>
+                    <p id="nosExpandidos"></p>
+                    <p id="tempoExecucao"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
-
 </html>
