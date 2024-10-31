@@ -1,0 +1,46 @@
+body {
+  background-color: #FFFFFF;
+  font-family: 'Arial', sans-serif;
+  color: #000000;
+}
+
+h1 {
+  color: #000000;
+  margin-bottom: 10px;
+  font-size: 2rem;
+}
+
+h2 {
+  color: #000000;
+  margin-bottom: 40px;
+  font-size: 1.3rem;
+}
+
+#results {
+  background-color: #FFFFFF;
+  border: 1px solid #dee2e6;
+  border-radius: 5px;
+  padding: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+label {
+  font-weight: bold;
+  color: #000000;
+}
+
+.form-control {
+  background-color: #FFFFFF;
+  color: #000000;
+  border: 2px solid #000000;
+}
+
+.form-control option {
+  background-color: #FFFFFF;
+  color: rgb(0, 0, 0);
+}
+
+.form-control:focus {
+  border-color: #000000;
+  box-shadow: none;
+}
