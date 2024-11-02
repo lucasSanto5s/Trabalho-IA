@@ -28,7 +28,7 @@ public class MapaEuropa {
         Capital espanha = new Capital("Espanha");
         Capital estonia = new Capital("Estônia");
         Capital finlandia = new Capital("Finlândia");
-        Capital frança = new Capital("França");
+        Capital franca = new Capital("França");
         Capital georgia = new Capital("Geórgia");
         Capital grecia = new Capital("Grécia");
         Capital hungria = new Capital("Hungria");
@@ -75,7 +75,7 @@ public class MapaEuropa {
         capitais.put("Espanha", espanha);
         capitais.put("Estônia", estonia);
         capitais.put("Finlândia", finlandia);
-        capitais.put("França", frança);
+        capitais.put("França", franca);
         capitais.put("Geórgia", georgia);
         capitais.put("Grécia", grecia);
         capitais.put("Hungria", hungria);
@@ -131,7 +131,7 @@ public class MapaEuropa {
         // Conexões para Yerevan
         capitais.get("Armênia").adicionarVizinho(capitais.get("Geórgia"), 375); // Tbilisi
         capitais.get("Armênia").adicionarVizinho(capitais.get("Azerbaijão"), 460); // Baku
-        capitais.get("Armênia").adicionarVizinho(capitais.get("Turquia"), 1215); // Ankara
+        
         capitais.get("Armênia").adicionarVizinho(capitais.get("Irã"), 790); // Teerã
 
         // Conexões para Viena
@@ -170,7 +170,7 @@ public class MapaEuropa {
         capitais.get("Bulgária").adicionarVizinho(capitais.get("Sérvia"), 395); // Belgrado
         capitais.get("Bulgária").adicionarVizinho(capitais.get("Macedônia do Norte"), 240); // Skopje
         capitais.get("Bulgária").adicionarVizinho(capitais.get("Grécia"), 785); // Atenas
-        capitais.get("Bulgária").adicionarVizinho(capitais.get("Turquia"), 800); // Ancara
+       
 
         // Conexões para Nur-Sultan
         capitais.get("Cazaquistão").adicionarVizinho(capitais.get("Rússia"), 2271); // Moscou
@@ -230,13 +230,12 @@ public class MapaEuropa {
         // Conexões para Tbilisi
         capitais.get("Geórgia").adicionarVizinho(capitais.get("Armênia"), 262); // Yerevan
         capitais.get("Geórgia").adicionarVizinho(capitais.get("Azerbaijão"), 532); // Baku
-        capitais.get("Geórgia").adicionarVizinho(capitais.get("Turquia"), 1446); // Ancara
+    
 
         // Conexões para Atenas
         capitais.get("Grécia").adicionarVizinho(capitais.get("Albânia"), 452); // Tirana
         capitais.get("Grécia").adicionarVizinho(capitais.get("Macedônia do Norte"), 792); // Skopje
         capitais.get("Grécia").adicionarVizinho(capitais.get("Bulgária"), 493); // Sofia
-        capitais.get("Grécia").adicionarVizinho(capitais.get("Turquia"), 869); // Ancara
 
         // Conexões para Budapeste
         capitais.get("Hungria").adicionarVizinho(capitais.get("Áustria"), 243); // Viena
@@ -251,7 +250,7 @@ public class MapaEuropa {
         capitais.get("Itália").adicionarVizinho(capitais.get("Suíça"), 695); // Berna
         capitais.get("Itália").adicionarVizinho(capitais.get("Áustria"), 765); // Viena
         capitais.get("Itália").adicionarVizinho(capitais.get("Eslovênia"), 485); // Liubliana
-        capitais.get("Itália").adicionarVizinho(capitais.get("São Marino"), 210); // São Marino
+        capitais.get("Itália").adicionarVizinho(capitais.get("San Marino"), 210); // São Marino
 
         // Conexões para Pristina
         capitais.get("Kosovo").adicionarVizinho(capitais.get("Albânia"), 100); // Tirana
