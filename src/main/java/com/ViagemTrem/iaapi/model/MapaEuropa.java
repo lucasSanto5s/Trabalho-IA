@@ -40,7 +40,6 @@ public class MapaEuropa {
         Capital luxemburgo = new Capital("Luxemburgo");
         Capital macedoniaNorte = new Capital("Macedônia do Norte");
         Capital moldavia = new Capital("Moldávia");
-        Capital monaco = new Capital("Mônaco");
         Capital montenegro = new Capital("Montenegro");
         Capital noruega = new Capital("Noruega");
         Capital paisesBaixos = new Capital("Países Baixos");
@@ -88,7 +87,7 @@ public class MapaEuropa {
         capitais.put("Luxemburgo", luxemburgo);
         capitais.put("Macedônia do Norte", macedoniaNorte);
         capitais.put("Moldávia", moldavia);
-        capitais.put("Mônaco", monaco);
+
         capitais.put("Montenegro", montenegro);
         capitais.put("Noruega", noruega);
         capitais.put("Países Baixos", paisesBaixos);
@@ -208,7 +207,7 @@ public class MapaEuropa {
         // Conexões para Madri
         capitais.get("Espanha").adicionarVizinho(capitais.get("Portugal"), 640); // Lisboa
         capitais.get("Espanha").adicionarVizinho(capitais.get("França"), 1300); // Paris
-        capitais.get("Espanha").adicionarVizinho(capitais.get("Andorra"), 200); // Andorra la Vella
+        capitais.get("Espanha").adicionarVizinho(capitais.get("Andorra"), 494); // Andorra la Vella
 
         // Conexões para Tallinn
         capitais.get("Estônia").adicionarVizinho(capitais.get("Letônia"), 213); // Riga
@@ -220,10 +219,13 @@ public class MapaEuropa {
 
         // Conexões para Paris
         capitais.get("França").adicionarVizinho(capitais.get("Bélgica"), 320); // Bruxelas
-        capitais.get("França").adicionarVizinho(capitais.get("Luxemburgo"), 290); // Luxemburgo
+        capitais.get("França").adicionarVizinho(capitais.get("Luxemburgo"), 380); // Luxemburgo
         capitais.get("França").adicionarVizinho(capitais.get("Alemanha"), 1050); // Berlim
-        capitais.get("França").adicionarVizinho(capitais.get("Suíça"), 650); // Bern
-        capitais.get("França").adicionarVizinho(capitais.get("Espanha"), 1300); // Madri
+        capitais.get("França").adicionarVizinho(capitais.get("Suíça"), 490); // Berna
+        capitais.get("França").adicionarVizinho(capitais.get("Espanha"), 1030); // Madri
+        capitais.get("França").adicionarVizinho(capitais.get("Andorra"), 894); // Andorra-a-Velha
+        capitais.get("França").adicionarVizinho(capitais.get("Itália"), 1420); // Roma
+        
 
         // Conexões para Tbilisi
         capitais.get("Geórgia").adicionarVizinho(capitais.get("Armênia"), 262); // Yerevan
@@ -289,9 +291,6 @@ public class MapaEuropa {
         capitais.get("Moldávia").adicionarVizinho(capitais.get("Romênia"), 435); // Bucareste
         capitais.get("Moldávia").adicionarVizinho(capitais.get("Ucrânia"), 537); // Quiieve
 
-        // Conexões para Mônaco
-        capitais.get("Mônaco").adicionarVizinho(capitais.get("França"), 950); // Paris
-        capitais.get("Mônaco").adicionarVizinho(capitais.get("Itália"), 680); // Roma
 
         // Conexões para Podgorica
         capitais.get("Montenegro").adicionarVizinho(capitais.get("Bósnia-Herzegovina"), 173); // Sarajevo
