@@ -104,6 +104,8 @@ public class MapaEuropa {
         capitais.put("República Tcheca", republicaTcheca);
         capitais.put("Ucrânia", ucrania);
         capitais.put("Vaticano", vaticano);
+
+        adicionarConexoes();
     }
 
     // Método para adicionar conexões entre as capitais
