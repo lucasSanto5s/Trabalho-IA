@@ -69,7 +69,7 @@ public class BuscaLargura implements AlgoritmoBusca {
 
                         while(passo!= null) {
                             
-                            rota.add(passo.getNome()); // Adiciona o nome da capital ao início da rota
+                            rota.add(0, passo.getNome()); // Adiciona o nome da capital ao início da rota
         
                             if (passo.getPai() != null) {
                                 distanciaTotal += passo.getPai().distanciaPara(passo); // Soma a distância entre o nó e seu pai
