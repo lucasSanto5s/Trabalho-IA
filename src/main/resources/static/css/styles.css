@@ -1,38 +1,89 @@
 body {
-  background-color: #FFFFFF;
-  font-family: 'Arial', sans-serif;
+  min-height: 100vh;
+  background-color: #1B1B1B;
+  font-family: 'Gotham HTF Medium', sans-serif;
   color: #000000;
+  margin: 0;
 }
 
 h1 {
-  color: #000000;
+  color: #91A3AD;
   margin-bottom: 10px;
   font-size: 2rem;
+  font-weight: 700;
 }
 
 h2 {
-  color: #000000;
+  color: #616D72;
   margin-bottom: 40px;
   font-size: 1.3rem;
 }
 
-#results {
-  background-color: #FFFFFF;
-  border: 1px solid #dee2e6;
+#subtitulo {
+  animation: typing 2s steps(22), blink 0.5s step-end infinite alternate;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 2px solid #616D72;
+  display: inline-block;
+  margin-left: 370px;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 34%;
+  }
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+
+#resultados {
+  background-color: #1B1B1B;
+  border: 1px solid #616D72;
   border-radius: 5px;
   padding: 20px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: border-color 0.3s ease, color 0.3s ease;
+}
+
+#resultados:hover {
+  border-color: #ED145B;
+}
+
+#resultados p {
+  color: #616D72;
+  transition: color 0.3s ease;
+}
+
+#resultados:hover p {
+  color: #ED145B !important;
+}
+
+#resultados h2 {
+  color: #616D72;
+  transition: color 0.3s ease;
+}
+
+#resultados:hover h2 {
+  color: #ED145B;
 }
 
 label {
   font-weight: bold;
-  color: #000000;
+  color: #616D72;
+  transition: color 0.3s ease;
 }
 
 .form-control {
   background-color: #FFFFFF;
   color: #000000;
-  border: 2px solid #000000;
+  border: 2px solid #616D72;
 }
 
 .form-control option {
@@ -43,4 +94,43 @@ label {
 .form-control:focus {
   border-color: #000000;
   box-shadow: none;
+}
+
+.btn-buscar {
+  background-color: #ED145B;
+  border-color: #ED145B;
+  color: #000000;
+  transition: all 0.3s ease;
+}
+
+.btn-buscar:hover {
+  background-color: #ED145B;
+  border-color: #ED145B;
+  box-shadow: 0 0 1px #ED145B, 0 0 15px #ED145B;
+}
+
+.btn-limpar {
+  background-color: #1B1B1B;
+  border-color: #ED145B;
+  color: #ED145B;
+}
+
+.btn-limpar:hover {
+  background-color: #ED145B;
+  border-color: #ED145B;
+  color: #FFFFFF;
+}
+
+.form-control {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-color: #1B1B1B;
+  color: #616D72;
+  border: 2px solid #616D72;
+  padding: 8px 12px;
+  border-radius: 5px;
+  font-size: 1rem;
+  line-height: 1.2;
+  height: auto;
 }
