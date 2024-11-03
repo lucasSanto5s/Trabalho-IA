@@ -123,6 +123,8 @@ public class MapaEuropa {
         capitais.get("Alemanha").adicionarVizinho(capitais.get("França"), 1050); // Paris
         capitais.get("Alemanha").adicionarVizinho(capitais.get("Luxemburgo"), 750); // Luxemburgo
         capitais.get("Alemanha").adicionarVizinho(capitais.get("Bélgica"), 770); // Bruxelas
+        capitais.get("Alemanha").adicionarVizinho(capitais.get("Países Baixos"),577 ); 
+        capitais.get("Alemanha").adicionarVizinho(capitais.get("Dinamarca"),356 );
 
         // Conexões para Andorra
         capitais.get("Andorra").adicionarVizinho(capitais.get("Espanha"), 494); // Madrid
@@ -130,9 +132,8 @@ public class MapaEuropa {
 
         // Conexões para Yerevan
         capitais.get("Armênia").adicionarVizinho(capitais.get("Geórgia"), 375); // Tbilisi
-        capitais.get("Armênia").adicionarVizinho(capitais.get("Azerbaijão"), 460); // Baku
-        
-        capitais.get("Armênia").adicionarVizinho(capitais.get("Irã"), 790); // Teerã
+        capitais.get("Armênia").adicionarVizinho(capitais.get("Azerbaijão"), 460); // Baku   
+       
 
         // Conexões para Viena
         capitais.get("Áustria").adicionarVizinho(capitais.get("Eslováquia"), 82); // Bratislava
@@ -141,11 +142,15 @@ public class MapaEuropa {
         capitais.get("Áustria").adicionarVizinho(capitais.get("Eslovênia"), 380); // Ljubljana
         capitais.get("Áustria").adicionarVizinho(capitais.get("Suíça"), 800); // Berna
         capitais.get("Áustria").adicionarVizinho(capitais.get("Itália"), 1150); // Roma
+        capitais.get("Áustria").adicionarVizinho(capitais.get("Liechtenstein"), 600 ); // Vaduz 
+        capitais.get("Áustria").adicionarVizinho(capitais.get("Alemanha"), 680 );
+
 
         // Conexões para Baku
-        capitais.get("Azerbaijão").adicionarVizinho(capitais.get("Armênia"), 293); // Yerevan
+        capitais.get("Azerbaijão").adicionarVizinho(capitais.get("Armênia"), 460); // Yerevan
         capitais.get("Azerbaijão").adicionarVizinho(capitais.get("Geórgia"), 546); // Tbilisi
-        capitais.get("Azerbaijão").adicionarVizinho(capitais.get("Irã"), 650); // Teerã
+        capitais.get("Azerbaijão").adicionarVizinho(capitais.get("Rússia"), 2300); // Tbilisi
+  
 
         // Conexões para Bruxelas
         capitais.get("Bélgica").adicionarVizinho(capitais.get("França"), 264); // Paris
@@ -173,11 +178,7 @@ public class MapaEuropa {
        
 
         // Conexões para Nur-Sultan
-        capitais.get("Cazaquistão").adicionarVizinho(capitais.get("Rússia"), 2271); // Moscou
-        capitais.get("Cazaquistão").adicionarVizinho(capitais.get("China"), 2860); // Pequim
-        capitais.get("Cazaquistão").adicionarVizinho(capitais.get("Quirguistão"), 1040); // Bishkek
-        capitais.get("Cazaquistão").adicionarVizinho(capitais.get("Uzbequistão"), 1740); // Tashkent
-        capitais.get("Cazaquistão").adicionarVizinho(capitais.get("Turcomenistão"), 2650); // Ashgabat
+        capitais.get("Cazaquistão" ).adicionarVizinho(capitais.get("Rússia"), 2271); // Moscou
 
         // Conexões para Zagreb
         capitais.get("Croácia").adicionarVizinho(capitais.get("Eslovênia"), 140); // Ljubljana
@@ -188,7 +189,6 @@ public class MapaEuropa {
 
         // Conexões para Copenhague
         capitais.get("Dinamarca").adicionarVizinho(capitais.get("Suécia"), 522); // Estocolmo
-        capitais.get("Dinamarca").adicionarVizinho(capitais.get("Noruega"), 483); // Oslo
         capitais.get("Dinamarca").adicionarVizinho(capitais.get("Alemanha"), 356); // Berlim
 
         // Conexões para Bratislava
@@ -211,11 +211,13 @@ public class MapaEuropa {
 
         // Conexões para Tallinn
         capitais.get("Estônia").adicionarVizinho(capitais.get("Letônia"), 213); // Riga
-        capitais.get("Estônia").adicionarVizinho(capitais.get("Finlândia"), 80); // Helsinque (por ferry)
+        capitais.get("Estônia").adicionarVizinho(capitais.get("Rússia"), 1150); 
 
         // Conexões para Helsinque
-        capitais.get("Finlândia").adicionarVizinho(capitais.get("Estônia"), 80); // Tallinn (por ferry)
+     
         capitais.get("Finlândia").adicionarVizinho(capitais.get("Suécia"), 765); // Estocolmo (por ferry)
+        capitais.get("Finlândia").adicionarVizinho(capitais.get("Noruega"), 1157); // Estocolmo (por ferry)
+        capitais.get("Finlândia").adicionarVizinho(capitais.get("Rússia"),1300 );
 
         // Conexões para Paris
         capitais.get("França").adicionarVizinho(capitais.get("Bélgica"), 320); // Bruxelas
@@ -225,11 +227,13 @@ public class MapaEuropa {
         capitais.get("França").adicionarVizinho(capitais.get("Espanha"), 1030); // Madri
         capitais.get("França").adicionarVizinho(capitais.get("Andorra"), 894); // Andorra-a-Velha
         capitais.get("França").adicionarVizinho(capitais.get("Itália"), 1420); // Roma
+        capitais.get("França").adicionarVizinho(capitais.get("Inglaterra"), 460);
         
 
         // Conexões para Tbilisi
         capitais.get("Geórgia").adicionarVizinho(capitais.get("Armênia"), 262); // Yerevan
-        capitais.get("Geórgia").adicionarVizinho(capitais.get("Azerbaijão"), 532); // Baku
+        capitais.get("Geórgia").adicionarVizinho(capitais.get("Azerbaijão"), 546); // Baku
+        capitais.get("Geórgia").adicionarVizinho(capitais.get("Rússia"), 1600); // Baku
     
 
         // Conexões para Atenas
@@ -244,6 +248,7 @@ public class MapaEuropa {
         capitais.get("Hungria").adicionarVizinho(capitais.get("Romênia"), 842); // Bucareste
         capitais.get("Hungria").adicionarVizinho(capitais.get("Sérvia"), 370); // Belgrado
         capitais.get("Hungria").adicionarVizinho(capitais.get("Croácia"), 345); // Zagreb
+        capitais.get("Hungria").adicionarVizinho(capitais.get("Eslovênia"),460 ); 
 
         // Conexões para Roma
         capitais.get("Itália").adicionarVizinho(capitais.get("França"), 1140); // Paris
@@ -251,12 +256,12 @@ public class MapaEuropa {
         capitais.get("Itália").adicionarVizinho(capitais.get("Áustria"), 765); // Viena
         capitais.get("Itália").adicionarVizinho(capitais.get("Eslovênia"), 485); // Liubliana
         capitais.get("Itália").adicionarVizinho(capitais.get("San Marino"), 210); // São Marino
-
+        capitais.get("Itália").adicionarVizinho(capitais.get("Vaticano"), 4); // 
         // Conexões para Pristina
         capitais.get("Kosovo").adicionarVizinho(capitais.get("Albânia"), 100); // Tirana
         capitais.get("Kosovo").adicionarVizinho(capitais.get("Macedônia do Norte"), 80); // Skopje
         capitais.get("Kosovo").adicionarVizinho(capitais.get("Sérvia"), 250); // Belgrado
-        capitais.get("Kosovo").adicionarVizinho(capitais.get("Montenegro"), 210); // Podgorica
+        capitais.get("Kosovo").adicionarVizinho(capitais.get("Montenegro"), 85); // Podgorica
 
         // Conexões para Riga
         capitais.get("Letônia").adicionarVizinho(capitais.get("Estônia"), 280); // Tallinn
@@ -271,8 +276,8 @@ public class MapaEuropa {
         capitais.get("Lituânia").adicionarVizinho(capitais.get("Rússia"), 900); // Moscou
 
         // Conexões para Vaduz
-        capitais.get("Liechtenstein").adicionarVizinho(capitais.get("Suíça"), 79); // Berna
-        capitais.get("Liechtenstein").adicionarVizinho(capitais.get("Áustria"), 671); // Viena
+        capitais.get("Liechtenstein").adicionarVizinho(capitais.get("Suíça"), 200); // Berna
+        capitais.get("Liechtenstein").adicionarVizinho(capitais.get("Áustria"), 600); // Viena
 
         // Conexões para Luxemburgo
         capitais.get("Luxemburgo").adicionarVizinho(capitais.get("Bélgica"), 187); // Bruxelas
@@ -295,11 +300,13 @@ public class MapaEuropa {
         capitais.get("Montenegro").adicionarVizinho(capitais.get("Bósnia-Herzegovina"), 173); // Sarajevo
         capitais.get("Montenegro").adicionarVizinho(capitais.get("Croácia"), 570); // Zagreb
         capitais.get("Montenegro").adicionarVizinho(capitais.get("Sérvia"), 200); // Belgrado
-        capitais.get("Montenegro").adicionarVizinho(capitais.get("Albânia"), 110); // Tirana
+        capitais.get("Montenegro").adicionarVizinho(capitais.get("Albânia"), 110); // Tirana210
+        capitais.get("Montenegro").adicionarVizinho(capitais.get("Kosovo"), 85);
 
         // Conexões para Oslo
         capitais.get("Noruega").adicionarVizinho(capitais.get("Suécia"), 566); // Estocolmo
         capitais.get("Noruega").adicionarVizinho(capitais.get("Finlândia"), 1157); // Helsinque
+        capitais.get("Noruega").adicionarVizinho(capitais.get("Rússia"), 1570); 
 
         // Conexões para Amsterdã
         capitais.get("Países Baixos").adicionarVizinho(capitais.get("Bélgica"), 173); // Bruxelas
@@ -312,6 +319,7 @@ public class MapaEuropa {
         capitais.get("Polônia").adicionarVizinho(capitais.get("Ucrânia"), 783); // Quiieve
         capitais.get("Polônia").adicionarVizinho(capitais.get("Bielorrússia"), 490); // Minsk
         capitais.get("Polônia").adicionarVizinho(capitais.get("Lituânia"), 450); // Vilnius
+        capitais.get("Polônia").adicionarVizinho(capitais.get("Rússia"), 1200);
 
         // Conexões para Lisboa
         capitais.get("Portugal").adicionarVizinho(capitais.get("Espanha"), 514); // Madrid
@@ -335,7 +343,9 @@ public class MapaEuropa {
         capitais.get("Rússia").adicionarVizinho(capitais.get("Polônia"), 1200); // Varsóvia
         capitais.get("Rússia").adicionarVizinho(capitais.get("Bielorrússia"), 700); // Minsk
         capitais.get("Rússia").adicionarVizinho(capitais.get("Ucrânia"), 850); // Kyiv
-        capitais.get("Rússia").adicionarVizinho(capitais.get("Geórgia"), 1850); // Tbilisi
+        capitais.get("Rússia").adicionarVizinho(capitais.get("Geórgia"), 1600); // Tbilisi 
+        capitais.get("Rússia").adicionarVizinho(capitais.get("Azerbaijão"), 2300); // 
+        capitais.get("Rússia").adicionarVizinho(capitais.get("Cazaquistão"), 2271);
 
         // Conexões para San Marino
         capitais.get("San Marino").adicionarVizinho(capitais.get("Itália"), 180); // Roma
@@ -345,7 +355,11 @@ public class MapaEuropa {
         capitais.get("Sérvia").adicionarVizinho(capitais.get("Romênia"), 448); // Bucareste
         capitais.get("Sérvia").adicionarVizinho(capitais.get("Bósnia-Herzegovina"), 300); // Sarajevo
         capitais.get("Sérvia").adicionarVizinho(capitais.get("Montenegro"), 225); // Podgorica
-        capitais.get("Sérvia").adicionarVizinho(capitais.get("Macedônia do Norte"), 430); // Escópia
+        capitais.get("Sérvia").adicionarVizinho(capitais.get("Macedônia do Norte"), 430); // Escópia 
+        capitais.get("Sérvia").adicionarVizinho(capitais.get("Bulgária"), 395); 
+        capitais.get("Sérvia").adicionarVizinho(capitais.get("Kosovo"), 250); 
+        capitais.get("Sérvia").adicionarVizinho(capitais.get("Croácia"), 500);
+        
 
         // Conexões para Estocolmo
         capitais.get("Suécia").adicionarVizinho(capitais.get("Noruega"), 554); // Oslo
@@ -357,6 +371,7 @@ public class MapaEuropa {
         capitais.get("Suíça").adicionarVizinho(capitais.get("Alemanha"), 1010); // Berlim
         capitais.get("Suíça").adicionarVizinho(capitais.get("Itália"), 1050); // Roma
         capitais.get("Suíça").adicionarVizinho(capitais.get("Áustria"), 790); // Viena
+        capitais.get("Suíça").adicionarVizinho(capitais.get("Liechtenstein"), 200); // Liechtenstein
 
         // Conexões para Praga
         capitais.get("República Tcheca").adicionarVizinho(capitais.get("Alemanha"), 280); // Berlim
@@ -375,7 +390,7 @@ public class MapaEuropa {
 
         // Conexões para Cidade do Vaticano
         capitais.get("Vaticano").adicionarVizinho(capitais.get("Itália"), 4); // Roma
-        capitais.get("Vaticano").adicionarVizinho(capitais.get("San Marino"), 227); // San Marino
+       
 
     }
 
