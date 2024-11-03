@@ -45,7 +45,7 @@ h2 {
 
 #resultados {
   background-color: #1B1B1B;
-  border: 1px solid #616D72;
+  border: 2px solid #616D72;
   border-radius: 5px;
   padding: 20px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -107,6 +107,15 @@ label {
   background-color: #ED145B;
   border-color: #ED145B;
   box-shadow: 0 0 1px #ED145B, 0 0 15px #ED145B;
+}
+
+.btn-buscar:disabled {
+  background-color: #ED145B;
+  border-color: #ED145B;
+  color: #000000;
+  box-shadow: none;
+  opacity: 0.5;
+  cursor: not-allowed;
 }
 
 .btn-limpar {
