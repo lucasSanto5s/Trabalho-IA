@@ -5,7 +5,7 @@ import java.util.Map;
 
 public class Capital {
     private String nome;
-    private Map<Capital, Integer> vizinhos; // Vizinhos e distância para cada um deles
+    private Map<Capital, Distancia> vizinhos; // Vizinhos e suas distâncias
     private Capital pai; // Para reconstruir o caminho ao final
     private double estimativa; // Heurística para o algoritmo A*
 
@@ -14,13 +14,13 @@ public class Capital {
         this.vizinhos = new HashMap<>();
     }
 
-    // Método para adicionar um vizinho com a distância correspondente
-    public void adicionarVizinho(Capital vizinho, int distancia) {
-        vizinhos.put(vizinho, distancia);
+    // Método para adicionar um vizinho com as distâncias correspondentes
+    public void adicionarVizinho(Capital vizinho, int distanciaTrem, double distanciaLinhaReta) {
+        vizinhos.put(vizinho, new Distancia(distanciaTrem, distanciaLinhaReta));
     }
 
     // Getter para obter os vizinhos
-    public Map<Capital, Integer> getVizinhos() {
+    public Map<Capital, Distancia> getVizinhos() {
         return vizinhos;
     }
 
@@ -47,9 +47,14 @@ public class Capital {
         return estimativa;
     }
 
-    // Método para calcular a distância até outro vizinho, se o vizinho existir
-    public int distanciaPara(Capital vizinho) {
-        return vizinhos.getOrDefault(vizinho, Integer.MAX_VALUE); // Retorna uma distância muito grande se não forem vizinhos
+    // Método para calcular a distância de trem até outro vizinho, se o vizinho existir
+    public int distanciaTremPara(Capital vizinho) {
+        return vizinhos.getOrDefault(vizinho, new Distancia(Integer.MAX_VALUE, Double.MAX_VALUE)).getDistanciaTrem();
+    }
+
+    // Método para calcular a distância em linha reta até outro vizinho, se o vizinho existir
+    public double distanciaLinhaRetaPara(Capital vizinho) {
+        return vizinhos.getOrDefault(vizinho, new Distancia(Integer.MAX_VALUE, Double.MAX_VALUE)).getDistanciaLinhaReta();
     }
 
     @Override
