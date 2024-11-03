@@ -10,115 +10,23 @@
 </head>
 <body>
     <div class="container mt-5">
-        <h1 class="text-center">ALGORITIMOS DE BUSCA</h1>
+        <h1 class="text-center">ALGORITMOS DE BUSCA</h1>
         <h2 id="subtitulo" class="text-center">Rotas de trem entre capitais da Europa</h2>
         
         <div class="row">
             <div class="col-md-6">
                 <div class="form-group">
                     <label for="origem">ORIGEM:</label>
-                    <select id="origem" class="form-control form-control-sm">
-                        <option value="Albânia">Albânia</option>
-                        <option value="Alemanha">Alemanha</option>
-                        <option value="Andorra">Andorra</option>
-                        <option value="Armênia">Armênia</option>
-                        <option value="Áustria">Áustria</option>
-                        <option value="Azerbaijão">Azerbaijão</option>
-                        <option value="Bélgica">Bélgica</option>
-                        <option value="Bielorrússia">Bielorrússia</option>
-                        <option value="Bósnia-Herzegovina">Bósnia-Herzegovina</option>
-                        <option value="Bulgária">Bulgária</option>
-                        <option value="Cazaquistão">Cazaquistão</option>
-                        <option value="Croácia">Croácia</option>
-                        <option value="Dinamarca">Dinamarca</option>
-                        <option value="Eslováquia">Eslováquia</option>
-                        <option value="Eslovênia">Eslovênia</option>
-                        <option value="Espanha">Espanha</option>
-                        <option value="Estônia">Estônia</option>
-                        <option value="Finlândia">Finlândia</option>
-                        <option value="França">França</option>
-                        <option value="Geórgia">Geórgia</option>
-                        <option value="Grécia">Grécia</option>
-                        <option value="Hungria">Hungria</option>
-                        <option value="Itália">Itália</option>
-                        <option value="Kosovo">Kosovo</option>
-                        <option value="Letônia">Letônia</option>
-                        <option value="Lituânia">Lituânia</option>
-                        <option value="Liechtenstein">Liechtenstein</option>
-                        <option value="Luxemburgo">Luxemburgo</option>
-                        <option value="Macedônia do Norte">Macedônia do Norte</option>
-                        <option value="Moldávia">Moldávia</option>
-                        <option value="Montenegro">Montenegro</option>
-                        <option value="Noruega">Noruega</option>
-                        <option value="Países Baixos">Países Baixos</option>
-                        <option value="Polônia">Polônia</option>
-                        <option value="Portugal">Portugal</option>
-                        <option value="Inglaterra">Inglaterra</option>
-                        <option value="Romênia">Romênia</option>
-                        <option value="Rússia">Rússia</option>
-                        <option value="San Marino">San Marino</option>
-                        <option value="Sérvia">Sérvia</option>
-                        <option value="Suécia">Suécia</option>
-                        <option value="Suíça">Suíça</option>
-                        <option value="República Tcheca">República Tcheca</option>
-                        <option value="Ucrânia">Ucrânia</option>
-                        <option value="Vaticano">Vaticano</option>
-                    </select>
+                    <select id="origem" class="form-control form-control-sm"></select>
                 </div>
 
                 <div class="form-group">
                     <label for="destino">DESTINO:</label>
-                    <select id="destino" class="form-control form-control-sm">
-                        <option value="Albânia">Albânia</option>
-                        <option value="Alemanha">Alemanha</option>
-                        <option value="Andorra">Andorra</option>
-                        <option value="Armênia">Armênia</option>
-                        <option value="Áustria">Áustria</option>
-                        <option value="Azerbaijão">Azerbaijão</option>
-                        <option value="Bélgica">Bélgica</option>
-                        <option value="Bielorrússia">Bielorrússia</option>
-                        <option value="Bósnia-Herzegovina">Bósnia-Herzegovina</option>
-                        <option value="Bulgária">Bulgária</option>
-                        <option value="Cazaquistão">Cazaquistão</option>
-                        <option value="Croácia">Croácia</option>
-                        <option value="Dinamarca">Dinamarca</option>
-                        <option value="Eslováquia">Eslováquia</option>
-                        <option value="Eslovênia">Eslovênia</option>
-                        <option value="Espanha">Espanha</option>
-                        <option value="Estônia">Estônia</option>
-                        <option value="Finlândia">Finlândia</option>
-                        <option value="França">França</option>
-                        <option value="Geórgia">Geórgia</option>
-                        <option value="Grécia">Grécia</option>
-                        <option value="Hungria">Hungria</option>
-                        <option value="Itália">Itália</option>
-                        <option value="Kosovo">Kosovo</option>
-                        <option value="Letônia">Letônia</option>
-                        <option value="Lituânia">Lituânia</option>
-                        <option value="Liechtenstein">Liechtenstein</option>
-                        <option value="Luxemburgo">Luxemburgo</option>
-                        <option value="Macedônia do Norte">Macedônia do Norte</option>
-                        <option value="Moldávia">Moldávia</option>
-                        <option value="Montenegro">Montenegro</option>
-                        <option value="Noruega">Noruega</option>
-                        <option value="Países Baixos">Países Baixos</option>
-                        <option value="Polônia">Polônia</option>
-                        <option value="Portugal">Portugal</option>
-                        <option value="Inglaterra">Inglaterra</option>
-                        <option value="Romênia">Romênia</option>
-                        <option value="Rússia">Rússia</option>
-                        <option value="San Marino">San Marino</option>
-                        <option value="Sérvia">Sérvia</option>
-                        <option value="Suécia">Suécia</option>
-                        <option value="Suíça">Suíça</option>
-                        <option value="República Tcheca">República Tcheca</option>
-                        <option value="Ucrânia">Ucrânia</option>
-                        <option value="Vaticano">Vaticano</option>
-                    </select>
+                    <select id="destino" class="form-control form-control-sm"></select>
                 </div>
 
                 <div class="form-group">
-                    <label for="algoritmo">ALGORITIMO:</label>
+                    <label for="algoritmo">ALGORITMO:</label>
                     <select id="algoritmo" class="form-control form-control-sm">
                         <option value="Largura">Busca em Largura</option>
                         <option value="Aprofundamento Iterativo">Aprofundamento Iterativo</option>
@@ -147,6 +55,8 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="js/busca-rotas.js"></script>
+    <script src="js/validacao.js"></script>
+    <script src="js/resultado.js"></script>
+    <script src="js/interface.js"></script>
 </body>
 </html>
