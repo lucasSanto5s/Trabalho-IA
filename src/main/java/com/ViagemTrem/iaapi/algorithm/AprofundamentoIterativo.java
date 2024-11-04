@@ -15,13 +15,16 @@ import java.util.LinkedList;
 
 public class AprofundamentoIterativo implements AlgoritmoBusca {
 
+    long startTime = System.nanoTime();
+    int resets = 0;
     @Override
-    public  ResultadoBusca buscar(Capital origem, Capital destinoParam) {
+    public ResultadoBusca buscar(Capital origemParam, Capital destinoParam) {
 
-        // long startTime = System.nanoTime(); descomente para usar
+        
 
         // Mapa de capitais
         MapaEuropa mapa = new MapaEuropa();
+        
 
         // Variáveis para o resultado
         List<String> rota = new ArrayList<>();
@@ -29,21 +32,23 @@ public class AprofundamentoIterativo implements AlgoritmoBusca {
         int nosGerados = 0; // Contador de nós gerados
         int nosExpandidos = 0; // Contador de nós expandidos
         Capital destino = mapa.getCapital(destinoParam.getNome());
+        Capital origem = mapa.getCapital(origemParam.getNome());
+        
 
         // Aprofundamento Iterativo, vai aumentado o limite a cada tentiva
-        for (int limite = 0; limite < Integer.MAX_VALUE; limite++) {
-            
+        for (int limite = 0; limite < 10; limite++) {
             Set<Capital> visitados = new HashSet<>();
-
+            resets++;
             ResultadoBusca result = buscarComLimite(origem, destino, limite, visitados, nosGerados, nosExpandidos);
 
             if (result != null) {
-                // long endTime = System.nanoTime(); descomente para usar
-                // result.setTempoExecucao(endTime - startTime); descomente para usar
+                long endTime = System.nanoTime();
+                long tempoExecucao = endTime - startTime;
                 return result;
             }
         }
-        return null; // Se o destino não for encontrado (apenas por segurança)
+        return null; 
+
     }
 
     private ResultadoBusca buscarComLimite(Capital atual, Capital destino, int limite, Set<Capital> visitados,
@@ -54,8 +59,9 @@ public class AprofundamentoIterativo implements AlgoritmoBusca {
         }
 
         // Marca o nó como visitado e expande
-        visitados.add(atual);
+        visitados.add(atual); 
         nosExpandidos++;
+        
 
         // Se encontrou o destino, inicia a reconstrução do caminho
         if (atual.equals(destino)) {
@@ -72,8 +78,11 @@ public class AprofundamentoIterativo implements AlgoritmoBusca {
 
                 passo = passo.getPai(); // Vai para o pai para continuar reconstruindo
             }
-
-            return new ResultadoBusca(rota, distanciaTotal, nosGerados, nosExpandidos, 0); // Tempo de execução será atualizado mais tarde
+            System.out.println("Resets: " + resets);
+            long endTime = System.nanoTime();
+            long tempoExecucao = endTime - startTime;
+            return new ResultadoBusca(rota, distanciaTotal, nosGerados, nosExpandidos, tempoExecucao); // Tempo de execução será
+                                                                                           // atualizado mais tarde
         }
 
         // Expande para cada vizinho, se ainda não foi visitado
@@ -84,7 +93,8 @@ public class AprofundamentoIterativo implements AlgoritmoBusca {
                 vizinhoCapital.setPai(atual); // Define o pai para reconstruir o caminho depois
                 nosGerados++;
 
-                ResultadoBusca result = buscarComLimite(vizinhoCapital, destino, limite - 1, visitados, nosGerados,nosExpandidos); //reduz o limite, se n encontrar nada ele vai entrar no if(limite == 0)
+                ResultadoBusca result = buscarComLimite(vizinhoCapital, destino, limite - 1, visitados, nosGerados,
+                        nosExpandidos); // reduz o limite, se n encontrar nada ele vai entrar no if(limite == 0)
                 if (result != null) {
                     return result; // Encerra a busca se encontrar o destino
                 }
@@ -94,10 +104,7 @@ public class AprofundamentoIterativo implements AlgoritmoBusca {
                 visitados.remove(vizinhoCapital);
             }
         }
-
-         return null; // Retorna null se não encontrou o destino nesta profundidade
+        return null; // Retorna null se não encontrou o destino nesta profundidade
     }
-    
-
 
 }
