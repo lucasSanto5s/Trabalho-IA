@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const selecionaAlgoritmo = document.getElementById("algoritmo");
     const mensagemErro = document.getElementById("mensagemErro");
     const loader = document.getElementById("loader");
-  
+
     const capitais = [
         "Albânia", "Alemanha", "Andorra", "Armênia", "Áustria",
         "Azerbaijão", "Bélgica", "Bielorrússia", "Bósnia-Herzegovina",
@@ -18,11 +18,11 @@ document.addEventListener("DOMContentLoaded", () => {
         "Portugal", "Inglaterra", "Romênia", "Rússia", "San Marino",
         "Sérvia", "Suécia", "Suíça", "República Tcheca", "Ucrânia", "Vaticano"
     ];
-  
+
     const opcoes = () => {
         return capitais.map(pais => `<option value="${pais}">${pais}</option>`).join('');
     };
-  
+
     selecionaOrigem.innerHTML = opcoes();
     selecionaDestino.innerHTML = opcoes();
 
@@ -33,17 +33,17 @@ document.addEventListener("DOMContentLoaded", () => {
     ];
 
     const opcoesAlgoritmos = () => {
-        return opcoesAlgoritmo.map(algoritmo => 
+        return opcoesAlgoritmo.map(algoritmo =>
             `<option value="${algoritmo.valor}">${algoritmo.nome}</option>`
         ).join('');
     };
 
     selecionaAlgoritmo.innerHTML = opcoesAlgoritmos();
-  
+
     const validacaoValoresIguais = () => {
         const origem = selecionaOrigem.value;
         const destino = selecionaDestino.value;
-  
+
         if (origem === destino) {
             btnBuscar.disabled = true;
             mensagemErro.textContent = 'Selecione países diferentes em origem e destino.';
@@ -53,35 +53,35 @@ document.addEventListener("DOMContentLoaded", () => {
             mensagemErro.style.display = "none";
         }
     };
-  
+
     selecionaOrigem.addEventListener("change", validacaoValoresIguais);
     selecionaDestino.addEventListener("change", validacaoValoresIguais);
-  
+
     document.addEventListener("keydown", (event) => {
         if (event.key === "Enter") {
             event.preventDefault();
-  
+
             if (!btnBuscar.disabled) {
                 btnBuscar.click();
             }
         }
     });
-  
+
     document.addEventListener("keydown", (event) => {
         if (event.ctrlKey && event.key === "l") {
             event.preventDefault();
             btnLimpar.click();
         }
     });
-  
+
     btnBuscar.addEventListener("click", (event) => {
         event.preventDefault();
         const origem = selecionaOrigem.value;
         const destino = selecionaDestino.value;
         const algoritmo = selecionaAlgoritmo.value;
-  
+
         loader.style.display = 'block';
-  
+
         buscaRota(origem, destino, algoritmo)
             .then(resultado => {
                 mostraResultado(resultado);
@@ -102,14 +102,40 @@ document.addEventListener("DOMContentLoaded", () => {
                 loader.style.display = 'none';
             });
     });
-  
+
     btnLimpar.addEventListener("click", () => {
-        limpaResultado();
-        selecionaOrigem.selectedIndex = 0;
-        selecionaDestino.selectedIndex = 0;
-        selecionaAlgoritmo.selectedIndex = 0;
+        loader.style.display = 'block';
+
+        setTimeout(() => {
+            limpaResultado();
+            selecionaOrigem.selectedIndex = 0;
+            selecionaDestino.selectedIndex = 0;
+            selecionaAlgoritmo.selectedIndex = 0;
+
+            loader.style.display = 'none';
+        }, 10);
+
         validacaoValoresIguais();
     });
-  
+
     validacaoValoresIguais();
+
+    document.addEventListener("keydown", (event) => {
+        if (event.key === "ArrowDown" || event.key === "ArrowUp") {
+            event.preventDefault();
+
+            const campos = [selecionaOrigem, selecionaDestino, selecionaAlgoritmo];
+            const indiceAtual = campos.indexOf(document.activeElement);
+
+            if (event.key === "ArrowDown") {
+
+                const proximoIndice = (indiceAtual + 1) % campos.length;
+                campos[proximoIndice].focus();
+            } else if (event.key === "ArrowUp") {
+
+                const indiceAnterior = (indiceAtual - 1 + campos.length) % campos.length;
+                campos[indiceAnterior].focus();
+            }
+        }
+    });
 });
