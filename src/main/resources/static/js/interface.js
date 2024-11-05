@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const selecionaOrigem = document.getElementById("origem");
   const selecionaDestino = document.getElementById("destino");
   const mensagemErro = document.getElementById("mensagemErro");
+  const loader = document.getElementById("loader");
 
   const capitais = [
       "Albânia", "Alemanha", "Andorra", "Armênia", "Áustria",
@@ -47,6 +48,8 @@ document.addEventListener("DOMContentLoaded", () => {
       const destino = selecionaDestino.value;
       const algoritmo = document.getElementById("algoritmo").value;
 
+      loader.style.display = 'block';
+
       buscaRota(origem, destino, algoritmo)
       .then(resultado => {
           mostraResultado(resultado);
@@ -62,6 +65,9 @@ document.addEventListener("DOMContentLoaded", () => {
               mensagemErro = { message: erro.message };
               alert("Erro ao buscar a rota: " + mensagemErro.message);
           }
+      })
+      .finally(() => {
+          loader.style.display = 'none';
       });  
   });
 
