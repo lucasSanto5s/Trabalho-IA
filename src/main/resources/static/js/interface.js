@@ -1,12 +1,12 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const btnBuscar = document.getElementById("btnBuscar");
-  const btnLimpar = document.getElementById("btnLimpar");
-  const selecionaOrigem = document.getElementById("origem");
-  const selecionaDestino = document.getElementById("destino");
-  const mensagemErro = document.getElementById("mensagemErro");
-  const loader = document.getElementById("loader");
-
-  const capitais = [
+    const btnBuscar = document.getElementById("btnBuscar");
+    const btnLimpar = document.getElementById("btnLimpar");
+    const selecionaOrigem = document.getElementById("origem");
+    const selecionaDestino = document.getElementById("destino");
+    const mensagemErro = document.getElementById("mensagemErro");
+    const loader = document.getElementById("loader");
+  
+    const capitais = [
       "Albânia", "Alemanha", "Andorra", "Armênia", "Áustria",
       "Azerbaijão", "Bélgica", "Bielorrússia", "Bósnia-Herzegovina",
       "Bulgária", "Cazaquistão", "Croácia", "Dinamarca", "Eslováquia",
@@ -16,67 +16,85 @@ document.addEventListener("DOMContentLoaded", () => {
       "Moldávia", "Montenegro", "Noruega", "Países Baixos", "Polônia",
       "Portugal", "Inglaterra", "Romênia", "Rússia", "San Marino",
       "Sérvia", "Suécia", "Suíça", "República Tcheca", "Ucrânia", "Vaticano"
-  ];
-
-  const opcoes = () => {
+    ];
+  
+    const opcoes = () => {
       return capitais.map(pais => `<option value="${pais}">${pais}</option>`).join('');
-  };
-
-  selecionaOrigem.innerHTML = opcoes();
-  selecionaDestino.innerHTML = opcoes();
-
-  const validacaoValoresIguais = () => {
+    };
+  
+    selecionaOrigem.innerHTML = opcoes();
+    selecionaDestino.innerHTML = opcoes();
+  
+    const validacaoValoresIguais = () => {
       const origem = selecionaOrigem.value;
       const destino = selecionaDestino.value;
-
+  
       if (origem === destino) {
-          btnBuscar.disabled = true;
-          mensagemErro.textContent = 'Selecione países diferentes em origem e destino.';
-          mensagemErro.style.display = "block";
+        btnBuscar.disabled = true;
+        mensagemErro.textContent = 'Selecione países diferentes em origem e destino.';
+        mensagemErro.style.display = "block";
       } else {
-          btnBuscar.disabled = false;
-          mensagemErro.style.display = "none";
+        btnBuscar.disabled = false;
+        mensagemErro.style.display = "none";
       }
-  };
+    };
+  
+    selecionaOrigem.addEventListener("change", validacaoValoresIguais);
+    selecionaDestino.addEventListener("change", validacaoValoresIguais);
+  
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Enter") {
+        event.preventDefault();
 
-  selecionaOrigem.addEventListener("change", validacaoValoresIguais);
-  selecionaDestino.addEventListener("change", validacaoValoresIguais);
-
-  btnBuscar.addEventListener("click", (event) => {
+        if (!btnBuscar.disabled) {
+          btnBuscar.click();
+        }
+      }
+    });
+  
+    document.addEventListener("keydown", (event) => {
+      if (event.ctrlKey && event.key === "l") {
+        event.preventDefault();
+        btnLimpar.click();
+      }
+    });
+  
+    btnBuscar.addEventListener("click", (event) => {
       event.preventDefault();
       const origem = selecionaOrigem.value;
       const destino = selecionaDestino.value;
       const algoritmo = document.getElementById("algoritmo").value;
-
+  
       loader.style.display = 'block';
-
+  
       buscaRota(origem, destino, algoritmo)
-      .then(resultado => {
+        .then(resultado => {
           mostraResultado(resultado);
-      })
-      .catch(erro => {
-          let mensagemErro; 
+        })
+        .catch(erro => {
+          let mensagemErro;
           if (erro.response) {
-              erro.response.json().then(data => {
-                  mensagemErro = data;
-                  alert("Erro ao buscar a rota: " + mensagemErro.message);
-              });
-          } else {
-              mensagemErro = { message: erro.message };
+            erro.response.json().then(data => {
+              mensagemErro = data;
               alert("Erro ao buscar a rota: " + mensagemErro.message);
+            });
+          } else {
+            mensagemErro = { message: erro.message };
+            alert("Erro ao buscar a rota: " + mensagemErro.message);
           }
-      })
-      .finally(() => {
+        })
+        .finally(() => {
           loader.style.display = 'none';
-      });  
-  });
-
-  btnLimpar.addEventListener("click", () => {
+        });
+    });
+  
+    btnLimpar.addEventListener("click", () => {
       limpaResultado();
       selecionaOrigem.selectedIndex = 0;
       selecionaDestino.selectedIndex = 0;
       validacaoValoresIguais();
+    });
+  
+    validacaoValoresIguais();
   });
-
-  validacaoValoresIguais();
-});
+  
