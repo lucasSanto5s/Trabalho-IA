@@ -40,22 +40,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     selecionaAlgoritmo.innerHTML = opcoesAlgoritmos();
 
-    const validacaoValoresIguais = () => {
-        const origem = selecionaOrigem.value;
-        const destino = selecionaDestino.value;
+    validacaoEventos(selecionaOrigem, selecionaDestino, btnBuscar, mensagemErro);
 
-        if (origem === destino) {
-            btnBuscar.disabled = true;
-            mensagemErro.textContent = 'Selecione países diferentes em origem e destino.';
-            mensagemErro.style.display = "block";
-        } else {
-            btnBuscar.disabled = false;
-            mensagemErro.style.display = "none";
-        }
-    };
-
-    selecionaOrigem.addEventListener("change", validacaoValoresIguais);
-    selecionaDestino.addEventListener("change", validacaoValoresIguais);
+    validacaoValoresIguais(selecionaOrigem.value, selecionaDestino.value, btnBuscar, mensagemErro);
 
     document.addEventListener("keydown", (event) => {
         if (event.key === "Enter") {
@@ -112,13 +99,11 @@ document.addEventListener("DOMContentLoaded", () => {
             selecionaDestino.selectedIndex = 0;
             selecionaAlgoritmo.selectedIndex = 0;
 
+            validacaoValoresIguais(selecionaOrigem.value, selecionaDestino.value, btnBuscar, mensagemErro);
+            
             loader.style.display = 'none';
         }, 10);
-
-        validacaoValoresIguais();
     });
-
-    validacaoValoresIguais();
 
     document.addEventListener("keydown", (event) => {
         if (event.key === "ArrowDown" || event.key === "ArrowUp") {
