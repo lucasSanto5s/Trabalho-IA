@@ -1,7 +1,6 @@
 package com.ViagemTrem.iaapi.algorithm;
 
 import com.ViagemTrem.iaapi.model.Capital;
-import com.ViagemTrem.iaapi.model.Distancia;
 import com.ViagemTrem.iaapi.model.MapaEuropa;
 import com.ViagemTrem.iaapi.model.ResultadoBusca;
 import java.util.List;
@@ -17,6 +16,7 @@ public class AprofundamentoIterativo implements AlgoritmoBusca {
 
     long startTime = System.nanoTime();
     int resets = 0;
+
     @Override
     public ResultadoBusca buscar(Capital origemParam, Capital destinoParam) {
 
@@ -36,7 +36,7 @@ public class AprofundamentoIterativo implements AlgoritmoBusca {
         
 
         // Aprofundamento Iterativo, vai aumentado o limite a cada tentiva
-        for (int limite = 0; limite < 10; limite++) {
+        for (int limite = 0; limite < 20; limite++) {
             Set<Capital> visitados = new HashSet<>();
             resets++;
             ResultadoBusca result = buscarComLimite(origem, destino, limite, visitados, nosGerados, nosExpandidos);
@@ -86,7 +86,7 @@ public class AprofundamentoIterativo implements AlgoritmoBusca {
         }
 
         // Expande para cada vizinho, se ainda não foi visitado
-        for (Map.Entry<Capital, Distancia> vizinho : atual.getVizinhos().entrySet()) {
+        for (Map.Entry<Capital, Integer> vizinho : atual.getVizinhos().entrySet()) {
             Capital vizinhoCapital = vizinho.getKey();
 
             if (!visitados.contains(vizinhoCapital)) {

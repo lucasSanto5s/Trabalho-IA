@@ -1,7 +1,6 @@
 package com.ViagemTrem.iaapi.algorithm;
 
 import com.ViagemTrem.iaapi.model.Capital;
-import com.ViagemTrem.iaapi.model.Distancia;
 import com.ViagemTrem.iaapi.model.MapaEuropa;
 import com.ViagemTrem.iaapi.model.ResultadoBusca;
 import java.util.List;
@@ -16,7 +15,7 @@ import java.util.LinkedList;
 public class BuscaLargura implements AlgoritmoBusca {
 
     @Override
-    public ResultadoBusca buscar(Capital origem, Capital destinoParam) {
+    public ResultadoBusca buscar(Capital origem, Capital destino) {
         long startTime = System.nanoTime();
 
         // Mapa de capitais
@@ -30,7 +29,7 @@ public class BuscaLargura implements AlgoritmoBusca {
 
         // Inicializar a fila com a capital de origem
         fila.add(mapa.getCapital(origem.getNome()));
-        Capital destino = mapa.getCapital(destinoParam.getNome());
+       
 
         origem.setPai(null); // O nó inicial não tem pai
         visitados.add(origem);
@@ -52,7 +51,7 @@ public class BuscaLargura implements AlgoritmoBusca {
          
             // Para cada vizinho da capital atual, se ainda não foi visitado, adiciona à
             // fila
-            for (Map.Entry<Capital, Distancia> vizinho : atual.getVizinhos().entrySet()) {
+            for (Map.Entry<Capital, Integer> vizinho : atual.getVizinhos().entrySet()) {
                 Capital vizinhoCapital = vizinho.getKey();
               
 
@@ -66,7 +65,7 @@ public class BuscaLargura implements AlgoritmoBusca {
                     
                     if (vizinhoCapital.equals(destino)) {
                         encontrado = true; // Encerra o loop ao encontrar o destino
-                        Capital passo = destino;
+                        Capital passo = vizinhoCapital;
 
                         while(passo!= null) {
                             
