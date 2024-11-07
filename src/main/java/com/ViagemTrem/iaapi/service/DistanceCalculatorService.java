@@ -67,6 +67,152 @@ public class DistanceCalculatorService {
         countryToCapitalMap.put("República Tcheca", "Praga");
         countryToCapitalMap.put("Ucrânia", "Kiev");
         countryToCapitalMap.put("Vaticano", "Cidade do Vaticano");
+        adicionarDistanciasMapaBrasil();
+    }
+
+    private void adicionarDistanciasMapaBrasil() {
+        // Porto Alegre
+        distanceMap.put("Porto Alegre-Porto Alegre", 0);
+        distanceMap.put("Porto Alegre-Florianópolis", 376);
+        distanceMap.put("Porto Alegre-Curitiba", 547);
+        distanceMap.put("Porto Alegre-São Paulo", 852);
+        distanceMap.put("Porto Alegre-Rio de Janeiro", 1124);
+        distanceMap.put("Porto Alegre-Belo Horizonte", 1341);
+        distanceMap.put("Porto Alegre-Brasília", 1621);
+        distanceMap.put("Porto Alegre-Cuiabá", 1679);
+        distanceMap.put("Porto Alegre-Salvador", 2303);
+        distanceMap.put("Porto Alegre-Fortaleza", 3241);
+        distanceMap.put("Porto Alegre-Manaus", 3132);
+
+        // Florianópolis
+        distanceMap.put("Florianópolis-Porto Alegre", 376);
+        distanceMap.put("Florianópolis-Florianópolis", 0);
+        distanceMap.put("Florianópolis-Curitiba", 251);
+        distanceMap.put("Florianópolis-São Paulo", 489);
+        distanceMap.put("Florianópolis-Rio de Janeiro", 748);
+        distanceMap.put("Florianópolis-Belo Horizonte", 973);
+        distanceMap.put("Florianópolis-Brasília", 1315);
+        distanceMap.put("Florianópolis-Cuiabá", 1544);
+        distanceMap.put("Florianópolis-Salvador", 1931);
+        distanceMap.put("Florianópolis-Fortaleza", 2858);
+        distanceMap.put("Florianópolis-Manaus", 2982);
+
+        // Curitiba
+        distanceMap.put("Curitiba-Porto Alegre", 547);
+        distanceMap.put("Curitiba-Florianópolis", 251);
+        distanceMap.put("Curitiba-Curitiba", 0);
+        distanceMap.put("Curitiba-São Paulo", 339);
+        distanceMap.put("Curitiba-Rio de Janeiro", 676);
+        distanceMap.put("Curitiba-Belo Horizonte", 821);
+        distanceMap.put("Curitiba-Brasília", 1081);
+        distanceMap.put("Curitiba-Cuiabá", 1302);
+        distanceMap.put("Curitiba-Salvador", 1784);
+        distanceMap.put("Curitiba-Fortaleza", 2671);
+        distanceMap.put("Curitiba-Manaus", 2734);
+
+        // São Paulo
+        distanceMap.put("São Paulo-Porto Alegre", 852);
+        distanceMap.put("São Paulo-Florianópolis", 489);
+        distanceMap.put("São Paulo-Curitiba", 339);
+        distanceMap.put("São Paulo-São Paulo", 0);
+        distanceMap.put("São Paulo-Rio de Janeiro", 357);
+        distanceMap.put("São Paulo-Belo Horizonte", 490);
+        distanceMap.put("São Paulo-Brasília", 873);
+        distanceMap.put("São Paulo-Cuiabá", 1326);
+        distanceMap.put("São Paulo-Salvador", 1454);
+        distanceMap.put("São Paulo-Fortaleza", 2369);
+        distanceMap.put("São Paulo-Manaus", 2598);
+
+        // Rio de Janeiro
+        distanceMap.put("Rio de Janeiro-Porto Alegre", 1124);
+        distanceMap.put("Rio de Janeiro-Florianópolis", 748);
+        distanceMap.put("Rio de Janeiro-Curitiba", 676);
+        distanceMap.put("Rio de Janeiro-São Paulo", 357);
+        distanceMap.put("Rio de Janeiro-Rio de Janeiro", 0);
+        distanceMap.put("Rio de Janeiro-Belo Horizonte", 340);
+        distanceMap.put("Rio de Janeiro-Brasília", 933);
+        distanceMap.put("Rio de Janeiro-Cuiabá", 1576);
+        distanceMap.put("Rio de Janeiro-Salvador", 1210);
+        distanceMap.put("Rio de Janeiro-Fortaleza", 2190);
+        distanceMap.put("Rio de Janeiro-Manaus", 2849);
+
+        // Belo Horizonte
+        distanceMap.put("Belo Horizonte-Porto Alegre", 1341);
+        distanceMap.put("Belo Horizonte-Florianópolis", 973);
+        distanceMap.put("Belo Horizonte-Curitiba", 821);
+        distanceMap.put("Belo Horizonte-São Paulo", 490);
+        distanceMap.put("Belo Horizonte-Rio de Janeiro", 340);
+        distanceMap.put("Belo Horizonte-Belo Horizonte", 0);
+        distanceMap.put("Belo Horizonte-Brasília", 621);
+        distanceMap.put("Belo Horizonte-Cuiabá", 1373);
+        distanceMap.put("Belo Horizonte-Salvador", 964);
+        distanceMap.put("Belo Horizonte-Fortaleza", 1893);
+        distanceMap.put("Belo Horizonte-Manaus", 2446);
+
+        // Brasília
+        distanceMap.put("Brasília-Porto Alegre", 1621);
+        distanceMap.put("Brasília-Florianópolis", 1315);
+        distanceMap.put("Brasília-Curitiba", 1081);
+        distanceMap.put("Brasília-São Paulo", 873);
+        distanceMap.put("Brasília-Rio de Janeiro", 933);
+        distanceMap.put("Brasília-Belo Horizonte", 621);
+        distanceMap.put("Brasília-Brasília", 0);
+        distanceMap.put("Brasília-Cuiabá", 880);
+        distanceMap.put("Brasília-Salvador", 1059);
+        distanceMap.put("Brasília-Fortaleza", 1688);
+        distanceMap.put("Brasília-Manaus", 1939);
+
+        // Salvador
+        distanceMap.put("Salvador-Porto Alegre", 2303);
+        distanceMap.put("Salvador-Florianópolis", 1931);
+        distanceMap.put("Salvador-Curitiba", 1784);
+        distanceMap.put("Salvador-São Paulo", 1454);
+        distanceMap.put("Salvador-Rio de Janeiro", 1210);
+        distanceMap.put("Salvador-Belo Horizonte", 964);
+        distanceMap.put("Salvador-Brasília", 1059);
+        distanceMap.put("Salvador-Cuiabá", 1915);
+        distanceMap.put("Salvador-Salvador", 0);
+        distanceMap.put("Salvador-Fortaleza", 1028);
+        distanceMap.put("Salvador-Manaus", 2606);
+
+        // Cuiabá
+        distanceMap.put("Cuiabá-Porto Alegre", 1679);
+        distanceMap.put("Cuiabá-Florianópolis", 1544);
+        distanceMap.put("Cuiabá-Curitiba", 1302);
+        distanceMap.put("Cuiabá-São Paulo", 1326);
+        distanceMap.put("Cuiabá-Rio de Janeiro", 1576);
+        distanceMap.put("Cuiabá-Belo Horizonte", 1373);
+        distanceMap.put("Cuiabá-Brasília", 880);
+        distanceMap.put("Cuiabá-Cuiabá", 0);
+        distanceMap.put("Cuiabá-Salvador", 1915);
+        distanceMap.put("Cuiabá-Fortaleza", 2329);
+        distanceMap.put("Cuiabá-Manaus", 1453);
+
+        // Fortaleza
+        distanceMap.put("Fortaleza-Porto Alegre", 3241);
+        distanceMap.put("Fortaleza-Florianópolis", 2858);
+        distanceMap.put("Fortaleza-Curitiba", 2671);
+        distanceMap.put("Fortaleza-São Paulo", 2369);
+        distanceMap.put("Fortaleza-Rio de Janeiro", 2190);
+        distanceMap.put("Fortaleza-Belo Horizonte", 1893);
+        distanceMap.put("Fortaleza-Brasília", 1688);
+        distanceMap.put("Fortaleza-Cuiabá", 2329);
+        distanceMap.put("Fortaleza-Salvador", 1028);
+        distanceMap.put("Fortaleza-Fortaleza", 0);
+        distanceMap.put("Fortaleza-Manaus", 2384);
+
+        // Manaus
+        distanceMap.put("Manaus-Porto Alegre", 3132);
+        distanceMap.put("Manaus-Florianópolis", 2982);
+        distanceMap.put("Manaus-Curitiba", 2734);
+        distanceMap.put("Manaus-São Paulo", 2589);
+        distanceMap.put("Manaus-Rio de Janeiro", 2849);
+        distanceMap.put("Manaus-Belo Horizonte", 2446);
+        distanceMap.put("Manaus-Brasília", 1939);
+        distanceMap.put("Manaus-Cuiabá", 1453);
+        distanceMap.put("Manaus-Salvador", 2606);
+        distanceMap.put("Manaus-Fortaleza", 2384);
+        distanceMap.put("Manaus-Manaus", 0);
     }
   // Carrega a chave da API de um arquivo de propriedades
     private String loadApiKey() throws IOException {
@@ -142,7 +288,7 @@ public class DistanceCalculatorService {
     // Método para obter a distância entre duas capitais dos paises correspondentes;
     public int getDistance(String origem, String destino) {
         String key = origem + "-" + destino;
-        return distanceMap.getOrDefault(key, -1); // Retorna -1 se a distância não for encontrada
+        return distanceMap.getOrDefault(key, 0); 
     }
 
     // Método para calcular a distância usando as capitais dos países
