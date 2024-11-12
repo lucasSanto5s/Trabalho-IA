@@ -9,11 +9,21 @@ public class Capital {
     private Capital pai; // Para reconstruir o caminho ao final
     private double Fn = 0; // Custo do caminho real ate a Capital + heurística para o destino
     private double Gn = Double.POSITIVE_INFINITY; // Custo do caminho real (trem) ate a Capital atual;
+    private int nivel =0;
 
 
     public Capital(String nome) {
         this.nome = nome;
         this.vizinhos = new HashMap<>();
+
+    }
+
+    public Capital(Capital outraCapital) {
+        this.nome = outraCapital.nome;
+        this.vizinhos = new HashMap<>(outraCapital.vizinhos); // Cria um novo Map com os mesmos vizinhos e distâncias
+        this.Fn = outraCapital.Fn;
+        this.Gn = outraCapital.Gn;
+        this.nivel = outraCapital.nivel;
     }
 
     // Método para adicionar um vizinho com as distâncias correspondentes
@@ -43,6 +53,7 @@ public class Capital {
     public double getFn() {
         return this.Fn;
     }
+
     public void setFn(double x) {
         this.Fn = x ;
     }
@@ -55,7 +66,13 @@ public class Capital {
         this.Gn = x;
     }
   
+    public int getNivel() {
+        return this.nivel;
+    }
 
+    public void setNivel(int x) {
+        this.nivel = x ;
+    }
     // Método para calcular a distância de trem até outro vizinho, se o vizinho existir
     public int distanciaTremPara(Capital vizinho) {
         return vizinhos.getOrDefault(vizinho ,Integer.MAX_VALUE);
