@@ -1,3 +1,4 @@
+/* Estilo para o corpo da página (body) - Definindo fundo, fonte e comportamento de altura */
 body {
   min-height: 100vh;
   background-color: #1B1B1B;
@@ -6,6 +7,7 @@ body {
   margin: 0;
 }
 
+/* Estilo para o título principal (h1) - Cor, tamanho de fonte e espaçamento inferior */
 h1 {
   color: #91A3AD;
   margin-bottom: 10px;
@@ -13,12 +15,14 @@ h1 {
   font-weight: 700;
 }
 
+/* Estilo para o subtítulo (h2) - Definindo cor, tamanho da fonte e espaçamento inferior */
 h2 {
   color: #616D72;
   margin-bottom: 40px;
   font-size: 1.3rem;
 }
 
+/* Animação de digitação para o subtítulo (#subtitulo) - Efeito de texto sendo digitado com cursor piscando */
 #subtitulo {
   animation: typing 2s steps(22), blink 0.5s step-end infinite alternate;
   white-space: nowrap;
@@ -43,6 +47,7 @@ h2 {
   }
 }
 
+/* Estilo de resultados - Definindo fundo, borda, arredondamento, padding e sombra para o container de resultados */
 #resultados {
   background-color: #1B1B1B;
   border: 2px solid #616D72;
@@ -52,6 +57,7 @@ h2 {
   transition: border-color 0.3s ease, color 0.3s ease;
 }
 
+/* Efeito de hover nos resultados - Altera a cor da borda e do texto ao passar o mouse por cima */
 #resultados:hover {
   border-color: #ED145B;
 }
@@ -96,6 +102,7 @@ label {
   box-shadow: none;
 }
 
+/* Estilos do botão "Buscar" - Definindo cor de fundo, borda, texto e animação de hover */
 .btn-buscar {
   background-color: #ED145B;
   border-color: #ED145B;
@@ -118,6 +125,7 @@ label {
   cursor: not-allowed;
 }
 
+/* Estilos botão limpar */
 .btn-limpar {
   background-color: #1B1B1B;
   border-color: #ED145B;
@@ -130,6 +138,7 @@ label {
   color: #FFFFFF;
 }
 
+/* Estilos para os campos de seleção (select) - Definindo aparência personalizada para os campos de origem, destino e algoritmo */
 .form-control {
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -144,6 +153,7 @@ label {
   height: auto;
 }
 
+/* Estilos do loader - Animação de carregamento em rotação */
 .loader {
   border: 8px solid #616D72;
   border-top: 8px solid #ED145B;
@@ -163,6 +173,7 @@ label {
   100% { transform: rotate(360deg); }
 }
 
+/* Responsividade - Ajustes para telas menores que 768px e 480px (tamanho de fontes, botões e layout) */
 @media (max-width: 768px) {
   h1 {
     font-size: 1.5rem;

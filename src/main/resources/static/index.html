@@ -15,27 +15,35 @@
         
         <div class="row">
             <div class="col-md-6">
+                <!-- Formulário para selecionar a origem -->
                 <div class="form-group">
                     <label for="origem">ORIGEM:</label>
                     <select id="origem" class="form-control form-control-sm"></select>
                 </div>
 
+                <!-- Formulário para selecionar o destino -->
                 <div class="form-group">
                     <label for="destino">DESTINO:</label>
                     <select id="destino" class="form-control form-control-sm"></select>
                 </div>
 
+                <!-- Formulário para selecionar o algoritmo de busca -->
                 <div class="form-group">
                     <label for="algoritmo">ALGORITMO:</label>
                     <select id="algoritmo" class="form-control form-control-sm"></select>
                 </div>
 
+                <!-- Botão para iniciar a busca pela rota -->
                 <button id="btnBuscar" class="btn btn-buscar btn-block">BUSCAR ROTA</button>
+                <!-- Loader que fica escondido por padrão -->
                 <div id="loader" class="loader" style="display: none;"></div>
+                <!-- Botão para limpar os dados e reiniciar a busca -->
                 <button id="btnLimpar" class="btn btn-limpar btn-block mt-2">LIMPAR</button>
+                <!-- Parágrafo para exibir mensagens de erro -->
                 <p id="mensagemErro" style="color: red; display: none;"></p>
             </div>
 
+             <!-- Coluna  onde os resultados da busca serão exibidos -->
             <div class="col-md-6">
                 <div id="resultados" class="mt-4">
                     <h2>RESULTADO</h2>
@@ -49,6 +57,7 @@
         </div>
     </div> 
     
+    <!-- Scripts de bibliotecas externas -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
