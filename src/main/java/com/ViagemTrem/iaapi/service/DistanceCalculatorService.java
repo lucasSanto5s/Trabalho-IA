@@ -3,18 +3,20 @@ package com.ViagemTrem.iaapi.service;
 import org.json.JSONObject;
 import org.springframework.stereotype.Service;
 
+import com.ViagemTrem.iaapi.controller.MapsController;
+
 import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
-import java.util.Properties;
+
 
 @Service
 public class DistanceCalculatorService {
-
-    private final String API_KEY = loadApiKey();
+    private final MapsController apiKey = new MapsController();
+    private final String API_KEY = apiKey.getApiKey().toString();
     private static final String CSV_FILE_PATH = "src/main/java/com/ViagemTrem/iaapi/Dados/conteudo.csv"; // Caminho do
                                                                                                          // arquivo CSV
     private final Map<String, Integer> distanceMap = new HashMap<>();
@@ -213,15 +215,6 @@ public class DistanceCalculatorService {
         distanceMap.put("Manaus-Salvador", 2606);
         distanceMap.put("Manaus-Fortaleza", 2384);
         distanceMap.put("Manaus-Manaus", 0);
-    }
-  // Carrega a chave da API de um arquivo de propriedades
-    private String loadApiKey() throws IOException {
-        Properties properties = new Properties();
-
-        try (InputStream input = new FileInputStream( "src\\main\\resources\\application.properties")) {        
-            properties.load(input);
-            return properties.getProperty("API_KEY");
-        }
     }
 
     // Construtor para verificar ou preencher o CSV e carregar os dados no Map
