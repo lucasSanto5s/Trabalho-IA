@@ -1,4 +1,4 @@
-// Dicionário de traduções (português -> inglês) 
+// Dicionário de países e capitais 
 const traducoes = {
   "Albânia": "Tirana",
   "Alemanha": "Berlin",
@@ -41,7 +41,7 @@ const traducoes = {
   "San Marino": "San Marino",
   "Sérvia": "Belgrade",
   "Suécia": "Stockholm",
-  "Suíça": "Zurich",
+  "Suíça": "Zurique",
   "República Tcheca": "Prague",
   "Ucrânia": "Kyiv",
   "Vaticano": "Vatican City"
