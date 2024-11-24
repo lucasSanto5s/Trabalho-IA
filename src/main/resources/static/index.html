@@ -1,18 +1,20 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Busca Clássica</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/styles.css"> 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> 
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
+
 <body>
     <div class="container mt-5">
         <h1 class="text-center">ALGORITMOS DE BUSCA</h1>
         <h2 id="subtitulo" class="text-center">Rotas de trem entre capitais da Europa</h2>
-        
+
         <div class="row">
             <div class="col-md-6">
                 <!-- Formulário para selecionar a origem -->
@@ -43,7 +45,7 @@
                 <p id="mensagemErro" style="color: red; display: none;"></p>
             </div>
 
-             <!-- Coluna  onde os resultados da busca serão exibidos -->
+            <!-- Coluna  onde os resultados da busca serão exibidos -->
             <div class="col-md-6">
                 <div id="resultados" class="mt-4">
                     <h2>RESULTADO</h2>
@@ -54,15 +56,29 @@
                     <p id="tempoExecucao"></p>
                 </div>
             </div>
+
+            <!-- Mapa com a Rota -->
+            <div id="map-container" class="row mt-5">
+                <div class="col-md-12">
+                    <label>ROTA NO MAPA</label>
+                    <div id="map"></div>
+                </div>
+            </div>
         </div>
-    </div> 
-    
+
+    </div>
+    </div>
+
     <!-- Scripts de bibliotecas externas -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDb-qGuI_P46gt47nkOT71dIVQBQrx_Vbs&libraries=places&callback=inicializaMapa&loading=async" async defer></script>
+
     <script src="js/validacao.js"></script>
     <script src="js/resultado.js"></script>
     <script src="js/interface.js"></script>
+    <script src="js/mapa.js"></script>
 </body>
+
 </html>

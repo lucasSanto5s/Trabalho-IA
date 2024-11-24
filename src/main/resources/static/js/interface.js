@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
         "Portugal", "Inglaterra", "Romênia", "Rússia", "San Marino",
         "Sérvia", "Suécia", "Suíça", "República Tcheca", "Ucrânia", "Vaticano"
     ];
-    
+
     // Função que retorna as opções para os selects de origem e destino
     const opcoes = () => {
         return capitais.map(pais => `<option value="${pais}">${pais}</option>`).join('');
@@ -103,6 +103,13 @@ document.addEventListener("DOMContentLoaded", () => {
             });
     });
 
+    // Limpa a rota no mapa
+    const limpaRotaNoMapa = () => {
+        if (renderizadorDirecoes) {
+            renderizadorDirecoes.setDirections({ routes: [] });
+        }
+    };
+
     // Evento de clique no botão "Limpar" para resetar os campos e resultados
     btnLimpar.addEventListener("click", () => {
         loader.style.display = 'block'; // Mostra o louder/carregando
@@ -116,7 +123,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
             // Valida novamente para garantir que os campos de origem e destino não sejam iguais
             validacaoValoresIguais(selecionaOrigem.value, selecionaDestino.value, btnBuscar, mensagemErro);
-            
+
+            limpaRotaNoMapa();
+
             loader.style.display = 'none';// Esconde o loader/carregando
         }, 10);
     });
@@ -135,7 +144,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
                 const proximoIndice = (indiceAtual + 1) % campos.length;
                 campos[proximoIndice].focus();
-            } 
+            }
             // Se pressionado "ArrowUp", move o foco para o campo anterior
             else if (event.key === "ArrowUp") {
 
